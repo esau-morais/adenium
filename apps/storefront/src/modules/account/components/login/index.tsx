@@ -19,7 +19,7 @@ const Login = () => {
   const router = useRouter()
 
   const handleError = (_e: Error) => {
-    setAuthError("Invalid email or password")
+    setAuthError("Email ou senha inválido")
   }
 
   const {
@@ -45,21 +45,21 @@ const Login = () => {
           <Spinner size={24} />
         </div>
       )}
-      <h1 className="text-large-semi uppercase mb-6">Welcome back</h1>
+      <h1 className="text-large-semi uppercase mb-6">Já tenho cadastro</h1>
       <p className="text-center text-base-regular text-gray-700 mb-8">
-        Sign in to access an enhanced shopping experience.
+        Acesse sua conta para ter uma melhor experiência em sua compra.
       </p>
       <form className="w-full" onSubmit={onSubmit}>
         <div className="flex flex-col w-full gap-y-2">
           <Input
             label="Email"
-            {...register("email", { required: "Email is required" })}
+            {...register("email", { required: "Email é obrigatório" })}
             autoComplete="email"
             errors={errors}
           />
           <Input
-            label="Password"
-            {...register("password", { required: "Password is required" })}
+            label="Senha"
+            {...register("password", { required: "Senha é obrigatória" })}
             type="password"
             autoComplete="current-password"
             errors={errors}
@@ -68,19 +68,19 @@ const Login = () => {
         {authError && (
           <div>
             <span className="text-rose-500 w-full text-small-regular">
-              These credentials do not match our records
+              Email ou senha inválido
             </span>
           </div>
         )}
-        <Button className="mt-6">Enter</Button>
+        <Button className="mt-6">Entrar</Button>
       </form>
       <span className="text-center text-gray-700 text-small-regular mt-6">
-        Not a member?{" "}
+        Novo na Rosama?{" "}
         <button
           onClick={() => setCurrentView(LOGIN_VIEW.REGISTER)}
           className="underline"
         >
-          Join us
+          Crie uma conta
         </button>
         .
       </span>

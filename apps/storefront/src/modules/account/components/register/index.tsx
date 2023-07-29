@@ -23,7 +23,7 @@ const Register = () => {
   const router = useRouter()
 
   const handleError = (e: Error) => {
-    setAuthError("An error occured. Please try again.")
+    setAuthError("Ocorreu um erro inesperado. Por favor tente novamente.")
   }
 
   const {
@@ -49,41 +49,41 @@ const Register = () => {
           <Spinner size={24} />
         </div>
       )}
-      <h1 className="text-large-semi uppercase mb-6">Become a Acme Member</h1>
+      <h1 className="text-large-semi uppercase mb-6">Criar conta</h1>
       <p className="text-center text-base-regular text-gray-700 mb-4">
-        Create your Acme Member profile, and get access to an enhanced shopping
-        experience.
+        Crie uma conta na Rosama e tenha acesso a uma melhor experiência em sua
+        compra.
       </p>
       <form className="w-full flex flex-col" onSubmit={onSubmit}>
         <div className="flex flex-col w-full gap-y-2">
           <Input
-            label="First name"
-            {...register("first_name", { required: "First name is required" })}
+            label="Nome"
+            {...register("first_name", { required: "Nome é obrigatório" })}
             autoComplete="given-name"
             errors={errors}
           />
           <Input
-            label="Last name"
-            {...register("last_name", { required: "Last name is required" })}
+            label="Sobrenome"
+            {...register("last_name", { required: "Sobrenome é obrigatório" })}
             autoComplete="family-name"
             errors={errors}
           />
           <Input
             label="Email"
-            {...register("email", { required: "Email is required" })}
+            {...register("email", { required: "Email é obrigatório" })}
             autoComplete="email"
             errors={errors}
           />
           <Input
-            label="Phone"
+            label="Número de telefone"
             {...register("phone")}
             autoComplete="tel"
             errors={errors}
           />
           <Input
-            label="Password"
+            label="Senha"
             {...register("password", {
-              required: "Password is required",
+              required: "Senha é obrigatório",
             })}
             type="password"
             autoComplete="new-password"
@@ -93,11 +93,12 @@ const Register = () => {
         {authError && (
           <div>
             <span className="text-rose-500 w-full text-small-regular">
-              These credentials do not match our records
+              Ocorreu um erro ao cadastrar sua conta. Por favor, tente
+              novamente.
             </span>
           </div>
         )}
-        <span className="text-center text-gray-700 text-small-regular mt-6">
+        {/* <span className="text-center text-gray-700 text-small-regular mt-6">
           By creating an account, you agree to Acme&apos;s{" "}
           <Link href="/content/privacy-policy" className="underline">
             Privacy Policy
@@ -107,16 +108,16 @@ const Register = () => {
             Terms of Use
           </Link>
           .
-        </span>
-        <Button className="mt-6">Join</Button>
+        </span> */}
+        <Button className="mt-6">Criar</Button>
       </form>
       <span className="text-center text-gray-700 text-small-regular mt-6">
-        Already a member?{" "}
+        Já possui uma conta?{" "}
         <button
           onClick={() => setCurrentView(LOGIN_VIEW.SIGN_IN)}
           className="underline"
         >
-          Sign in
+          Entrar
         </button>
         .
       </span>

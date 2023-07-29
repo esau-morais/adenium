@@ -17,7 +17,8 @@ type MobileActionsProps = {
 }
 
 const MobileActions: React.FC<MobileActionsProps> = ({ product, show }) => {
-  const { variant, addToCart, options, inStock, updateOptions } = useProductActions()
+  const { variant, addToCart, options, inStock, updateOptions } =
+    useProductActions()
   const { state, open, close } = useToggleState()
 
   const price = useProductPrice({ id: product.id!, variantId: variant?.id })
@@ -74,14 +75,14 @@ const MobileActions: React.FC<MobileActionsProps> = ({ product, show }) => {
               <Button onClick={open} variant="secondary">
                 <div className="flex items-center justify-between w-full">
                   <span>
-                    {variant
-                      ? Object.values(options).join(" / ")
-                      : "Select Options"}
+                    {variant ? Object.values(options).join(" / ") : "Selecione"}
                   </span>
                   <ChevronDown />
                 </div>
               </Button>
-              <Button onClick={addToCart}>{!inStock ? "Out of stock" : "Add to cart"}</Button>
+              <Button onClick={addToCart}>
+                {!inStock ? "Esgotado" : "Adicionar ao carrinho"}
+              </Button>
             </div>
           </div>
         </Transition>

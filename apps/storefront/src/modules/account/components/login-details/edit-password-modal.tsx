@@ -96,7 +96,7 @@ const EditPasswordModal: React.FC<EditPasswordModalProps> = ({ customer }) => {
             <Input
               label="Old password"
               {...register("old_password", {
-                required: "Old password is required",
+                required: "Old password é obrigatório",
               })}
               type="password"
               autoComplete="password"
@@ -105,7 +105,7 @@ const EditPasswordModal: React.FC<EditPasswordModalProps> = ({ customer }) => {
             <Input
               label="New password"
               {...register("new_password", {
-                required: "New password is required",
+                required: "New password é obrigatório",
               })}
               type="password"
               autoComplete="new_password"
@@ -121,7 +121,7 @@ const EditPasswordModal: React.FC<EditPasswordModalProps> = ({ customer }) => {
             className="!bg-gray-200 !text-gray-900 !border-gray-200 min-h-0"
             onClick={close}
           >
-            Cancel
+            Cancelar
           </Button>
           <Button className="min-h-0" onClick={submit} disabled={submitting}>
             Save

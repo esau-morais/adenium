@@ -97,7 +97,7 @@ const GiftCard: React.FC<GiftCardProps> = ({ cart }) => {
               <Input
                 label="Code"
                 {...register("gift_card_code", {
-                  required: "Code is required",
+                  required: "Code é obrigatório",
                 })}
                 errors={errors}
                 touched={touchedFields}

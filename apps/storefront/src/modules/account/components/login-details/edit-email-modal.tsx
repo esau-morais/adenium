@@ -74,7 +74,7 @@ const EditEmailModal: React.FC<EditEmailModalProps> = ({ customer }) => {
             <Input
               label="Email"
               {...register("email", {
-                required: "Email is required",
+                required: "Email é obrigatório",
                 pattern: {
                   value: emailRegex,
                   message: "Must be a valid email",
@@ -92,7 +92,7 @@ const EditEmailModal: React.FC<EditEmailModalProps> = ({ customer }) => {
             className="!bg-gray-200 !text-gray-900 !border-gray-200 min-h-0"
             onClick={close}
           >
-            Cancel
+            Cancelar
           </Button>
           <Button className="min-h-0" onClick={submit} disabled={submitting}>
             Save

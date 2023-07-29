@@ -13,52 +13,62 @@ const FooterNav = () => {
       <div className="flex flex-col gap-y-6 xsmall:flex-row items-start justify-between">
         <div>
           <Link href="/" className="text-xl-semi uppercase">
-            Acme
+            Rosama
           </Link>
         </div>
-        <div className="text-small-regular grid grid-cols-2 gap-x-16">
+        <div
+          className={clsx(
+            "text-small-regular",
+            collections && collections.length
+              ? "grid grid-cols-2 gap-x-16"
+              : null
+          )}
+        >
+          {collections && collections.length ? (
+            <div className="flex flex-col gap-y-2">
+              <span className="text-base-semi">Coleções</span>
+              <ul
+                className={clsx("grid grid-cols-1 gap-y-2", {
+                  "grid-cols-2": collections.length > 4,
+                })}
+              >
+                {collections.map((c) => (
+                  <li key={c.id}>
+                    <Link href={`/collections/${c.handle}`}>{c.title}</Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
+
           <div className="flex flex-col gap-y-2">
-            <span className="text-base-semi">Collections</span>
-            <ul
-              className={clsx("grid grid-cols-1 gap-y-2", {
-                "grid-cols-2": (collections?.length || 0) > 4,
-              })}
-            >
-              {collections?.map((c) => (
-                <li key={c.id}>
-                  <Link href={`/collections/${c.handle}`}>{c.title}</Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="flex flex-col gap-y-2">
-            <span className="text-base-semi">Medusa</span>
+            <span className="text-base-semi">Redes sociais</span>
             <ul className="grid grid-cols-1 gap-y-2">
               <li>
                 <a
-                  href="https://github.com/medusajs"
+                  href="https://youtube.com/@RMRosadodesertoMaranhao"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  GitHub
+                  Youtube
                 </a>
               </li>
               <li>
                 <a
-                  href="https://docs.medusajs.com"
+                  href="https://www.instagram.com/rosadodesertoma/"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Documentation
+                  Instagram
                 </a>
               </li>
               <li>
                 <a
-                  href="https://github.com/medusajs/nextjs-starter-medusa"
+                  href="https://api.whatsapp.com/send?phone=5599982348930"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Source code
+                  WhatsApp
                 </a>
               </li>
             </ul>
@@ -67,7 +77,7 @@ const FooterNav = () => {
       </div>
       <div className="flex flex-col-reverse gap-y-4 justify-center xsmall:items-center xsmall:flex-row xsmall:items-end xsmall:justify-between">
         <span className="text-xsmall-regular text-gray-500">
-          © Copyright 2022 ACME
+          © Copyright {new Date().getFullYear()} Esaú Morais
         </span>
         <div className="min-w-[316px] flex xsmall:justify-end">
           <CountrySelect />

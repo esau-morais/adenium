@@ -32,7 +32,7 @@ const ImageGallery = ({ images }: ImageGalleryProps) => {
                 handleScrollTo(image.id)
               }}
             >
-              <span className="sr-only">Go to image {index + 1}</span>
+              <span className="sr-only">Ir para imagem {index + 1}</span>
               <Image
                 src={image.url}
                 className="absolute inset-0"
@@ -60,7 +60,7 @@ const ImageGallery = ({ images }: ImageGalleryProps) => {
                 src={image.url}
                 priority={index <= 2 ? true : false}
                 className="absolute inset-0"
-                alt={`Product image ${index + 1}`}
+                alt={`Imagem do produto ${index + 1}`}
                 fill
                 sizes="100vw"
                 style={{

@@ -14,7 +14,7 @@ async function getProducts(handle: string) {
   })
 
   if (!res.ok) {
-    throw new Error(`Failed to fetch product: ${handle}`)
+    throw new Error(`Falha ao encontrar produto: ${handle}`)
   }
 
   return res.body
@@ -26,10 +26,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const product = products[0]
 
   return {
-    title: `${product.title} | Acme Store`,
+    title: `${product.title} | Rosama`,
     description: `${product.title}`,
     openGraph: {
-      title: `${product.title} | Acme Store`,
+      title: `${product.title} | Rosama`,
       description: `${product.title}`,
       images: product.thumbnail ? [product.thumbnail] : [],
     },

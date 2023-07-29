@@ -5,14 +5,14 @@ const SignInPrompt = () => {
   return (
     <div className="bg-white flex items-start justify-between">
       <div>
-        <h2 className="text-xl-semi">Already have an account?</h2>
+        <h2 className="text-xl-semi">Já possui uma conta?</h2>
         <p className="text-base-regular text-gray-700 mt-2">
-          Sign in for a better experience.
+          Acesse para uma melhor experiência.
         </p>
       </div>
       <div>
         <Link href="/account/login">
-          <Button variant="secondary">Sign in</Button>
+          <Button variant="secondary">Entrar</Button>
         </Link>
       </div>
     </div>

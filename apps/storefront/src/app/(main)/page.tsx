@@ -3,9 +3,9 @@ import Hero from "@modules/home/components/hero"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Home",
+  title: "Rosama",
   description:
-    "Shop all available models only at the ACME. Worldwide Shipping. Secure Payment.",
+    "Encontre os produtos que mais combinam com seu gosto. Envio nacional. Pagamento seguro.",
 }
 
 const Home = () => {
